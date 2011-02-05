@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, TaxCalculator!</string>
+    <string name="app_name">TaxCalculator</string>
+    <string name="income_tax_init">Enter the values to calculate tax.</string>
+    <string name="income">income</string>
+    <string name="investment">Investments under 80C</string>
+    <string name="infra_investment">Investments under 80D.</string>
+    <string name="housing_interest">Interest on housing loans.</string>
+    <string name="medical_premium">Medical insurance premiums.</string>
+    <string name="calculate_tax">Calculate Tax</string>
+    <string name="zero">0</string>
+    
+</resources>
