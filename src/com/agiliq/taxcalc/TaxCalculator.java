@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import java.lang.Math;
 
 public class TaxCalculator extends Activity 
 		implements Button.OnClickListener{
@@ -29,17 +30,66 @@ public class TaxCalculator extends Activity
         
         int income_i, investments_i, infraInvestments_i;
         int housingInterest_i, medicalPremium_i;
-        income_i = Integer.parseInt(income.getText().toString());
-        investments_i = Integer.parseInt(investments.getText().toString());
-        infraInvestments_i = Integer.parseInt(infraInvestments.getText().toString());
-        housingInterest_i = Integer.parseInt(housingInterest.getText().toString());
-        medicalPremium_i =  Integer.parseInt(medicalPremium.getText().toString());
+        try{
+        	income_i = Integer.parseInt(income.getText().toString());
+        }
+        catch (NumberFormatException e) {
+			income_i = 0;
+		}
+        try {
+        	investments_i = Integer.parseInt(investments.getText().toString());
+		} catch (NumberFormatException e) {
+			investments_i = 0;
+		}
+        try {
+        	infraInvestments_i = Integer.parseInt(infraInvestments.getText().toString());
+		} catch (NumberFormatException e) {
+			infraInvestments_i = 0;
+		}
+        try {
+        	housingInterest_i = Integer.parseInt(housingInterest.getText().toString());
+		} catch (NumberFormatException e) {
+			housingInterest_i = 0;
+		}
+        try {
+        	medicalPremium_i =  Integer.parseInt(medicalPremium.getText().toString());
+		} catch (NumberFormatException e) {
+			medicalPremium_i = 0;
+		}
+        
         int final_tax = calculateTax(income_i, investments_i, infraInvestments_i, housingInterest_i, medicalPremium_i); 
         calculatedTax.setText("" + final_tax);
         
     }
     
     public int calculateTax(int income, int investments, int infraInvestments, int housingInterest, int medicalPremium){
-    	return 1000;
+    	investments = Math.min(0, Math.max(investments, 100000));
+    	infraInvestments = Math.min(0, Math.max(infraInvestments, 20000));
+    	housingInterest =  Math.min(0, Math.max(housingInterest, 15000));
+    	medicalPremium =   Math.min(0, Math.max(housingInterest, 35000));
+    	int taxableIncome = income - (investments+infraInvestments+housingInterest+medicalPremium);
+    	
+    	return (int)getTax(taxableIncome);
+    }
+    
+    public double getTax(int taxableIncome){
+        double taxOnThisSlab;
+        if (taxableIncome < 160000) {
+            return 0;
+        }
+        else if (taxableIncome < 500000){
+            taxOnThisSlab = 0.1 * (taxableIncome - 160000);
+            return taxOnThisSlab;
+        }
+        else if (taxableIncome < 800000){
+            taxOnThisSlab = 0.2 * (taxableIncome - 500000);
+            return taxOnThisSlab + 34000;
+        
+        }
+        else {
+            taxOnThisSlab = 0.3 * (taxableIncome - 800000);
+            return taxOnThisSlab + 94000;
+        }
+        
     }
 }
