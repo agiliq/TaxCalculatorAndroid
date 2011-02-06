@@ -59,14 +59,16 @@ public class TaxCalculator extends Activity
         
         int final_tax = calculateTax(income_i, investments_i, infraInvestments_i, housingInterest_i, medicalPremium_i); 
         calculatedTax.setText("" + final_tax);
+        TextView taxBottom = (TextView)findViewById(R.id.taxBot);
+        taxBottom.setText(""+final_tax);
         
     }
     
     public int calculateTax(int income, int investments, int infraInvestments, int housingInterest, int medicalPremium){
-    	investments = Math.min(0, Math.max(investments, 100000));
-    	infraInvestments = Math.min(0, Math.max(infraInvestments, 20000));
-    	housingInterest =  Math.min(0, Math.max(housingInterest, 15000));
-    	medicalPremium =   Math.min(0, Math.max(housingInterest, 35000));
+    	investments = Math.max(0, Math.min(investments, 100000));
+    	infraInvestments = Math.max(0, Math.min(infraInvestments, 20000));
+    	housingInterest =  Math.max(0, Math.min(housingInterest, 15000));
+    	medicalPremium =   Math.max(0, Math.min(medicalPremium, 35000));
     	int taxableIncome = income - (investments+infraInvestments+housingInterest+medicalPremium);
     	
     	return (int)getTax(taxableIncome);

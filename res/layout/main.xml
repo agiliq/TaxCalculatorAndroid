@@ -96,8 +96,15 @@
 		</EditText>
 		
 		
-		
+		<TextView  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content"
+		    android:id="@+id/taxBot" 
+		    android:text="Tac not calculated"
+		    />
 		<Button android:onClick="onClick" android:text="@string/calculate_tax" android:layout_height="wrap_content" android:id="@+id/button1" android:layout_width="wrap_content"></Button>
+		
+		
 
 	</LinearLayout>
 </ScrollView>
