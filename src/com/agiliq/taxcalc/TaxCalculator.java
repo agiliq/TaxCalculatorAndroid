@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import java.lang.Math;
 
+import com.flurry.android.FlurryAgent;
+
 public class TaxCalculator extends Activity 
 		implements Button.OnClickListener{
     /** Called when the activity is first created. */
@@ -18,6 +20,12 @@ public class TaxCalculator extends Activity
         setContentView(R.layout.main);
         
         
+    }
+    
+    public void onStart()
+    {
+        super.onStart();
+        FlurryAgent.onStartSession(this, "GSYR3HKPHK9Y5242RPBQ");
     }
     
     public void onClick(View v){
@@ -93,5 +101,11 @@ public class TaxCalculator extends Activity
             return taxOnThisSlab + 94000;
         }
         
+    }
+    
+    public void onStop()
+    {
+        super.onStop();
+        FlurryAgent.onEndSession(this);
     }
 }
