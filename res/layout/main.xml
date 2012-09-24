@@ -1,112 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-<ScrollView
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content">
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-		<TextView  
-		    android:layout_width="fill_parent" 
-		    android:layout_height="wrap_content"
-		    android:id="@+id/calculated_tax" 
-		    android:text="@string/income_tax_init"
-		    android:textSize="20px"
-		    android:textStyle="bold"
-		    />
-		
-		
-		<TextView  
-		    android:layout_width="fill_parent" 
-		    android:layout_height="wrap_content" 
-		    android:text="@string/income"
-		    />
-		    
-		<EditText android:text="" 
-			android:hint="@string/zero" 
-			android:id="@+id/income" 
-			android:layout_height="wrap_content"
-			android:imeOptions="actionDone"
-			android:inputType="number"
-			android:singleLine="true" 
-			android:layout_width="match_parent"></EditText>
-		
-		<TextView  
-		    android:layout_width="fill_parent" 
-		    android:layout_height="wrap_content" 
-		    android:text="@string/investment"
-		    />
-		<EditText android:text="" 
-			android:hint="@string/zero" 
-			android:id="@+id/investments" 
-			android:layout_height="wrap_content"
-			android:imeOptions="actionDone"
-			android:inputType="number"
-			android:singleLine="true" 	 
-			android:layout_width="match_parent">
-		</EditText>
-		
-		<TextView  
-		    android:layout_width="fill_parent" 
-		    android:layout_height="wrap_content" 
-		    android:text="@string/infra_investment"
-		    />
-		<EditText android:text="" 
-			android:hint="@string/zero" 
-			android:id="@+id/infraInvestment" 
-			android:layout_height="wrap_content"
-			android:imeOptions="actionDone"
-			android:inputType="number"
-			android:singleLine="true" 	 
-			android:layout_width="match_parent">
-		</EditText>
-		
-		<TextView  
-		    android:layout_width="fill_parent" 
-		    android:layout_height="wrap_content" 
-		    android:text="@string/housing_interest"
-		    />
-		<EditText android:text="" 
-			android:hint="@string/zero" 
-			android:id="@+id/housingInterest" 
-			android:layout_height="wrap_content"
-			android:imeOptions="actionDone"
-			android:inputType="number"
-			android:singleLine="true"  
-			android:layout_width="match_parent">
-		</EditText>
-		
-		
-		<TextView  
-		    android:layout_width="fill_parent" 
-		    android:layout_height="wrap_content" 
-		    android:text="@string/medical_premium"
-		    />
-		<EditText android:text="" 
-			android:hint="@string/zero" 
-			android:id="@+id/medicalPremium" 
-			android:layout_height="wrap_content"
-			android:imeOptions="actionDone"
-			android:inputType="number"
-			android:singleLine="true"  
-			android:layout_width="match_parent">
-		</EditText>
-		
-		
-		<TextView  
-		    android:layout_width="fill_parent" 
-		    android:layout_height="wrap_content"
-		    android:id="@+id/taxBot" 
-		    android:text="Tac not calculated"
-		    />
-		<Button android:onClick="onClick" android:text="@string/calculate_tax" android:layout_height="wrap_content" android:id="@+id/button1" android:layout_width="wrap_content"></Button>
-		
-		
+	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads" >
 
-	</LinearLayout>
-</ScrollView>
+	<ScrollView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1">
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="vertical"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content">
+			<TextView  
+			    android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content"
+			    android:id="@+id/calculated_tax" 
+			    android:text="@string/income_tax_init"
+			    android:textSize="20px"
+			    android:textStyle="bold"
+			    />
+			
+			
+			<TextView  
+			    android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content" 
+			    android:text="@string/income"
+			    />
+			    
+			<EditText android:text="" 
+				android:hint="@string/zero" 
+				android:id="@+id/income" 
+				android:layout_height="wrap_content"
+				android:imeOptions="actionDone"
+				android:inputType="number"
+				android:singleLine="true" 
+				android:layout_width="match_parent"></EditText>
+			
+			<TextView  
+			    android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content" 
+			    android:text="@string/investment"
+			    />
+			<EditText android:text="" 
+				android:hint="@string/zero" 
+				android:id="@+id/investments" 
+				android:layout_height="wrap_content"
+				android:imeOptions="actionDone"
+				android:inputType="number"
+				android:singleLine="true" 	 
+				android:layout_width="match_parent">
+			</EditText>
+			
+			<TextView  
+			    android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content" 
+			    android:text="@string/infra_investment"
+			    />
+			<EditText android:text="" 
+				android:hint="@string/zero" 
+				android:id="@+id/infraInvestment" 
+				android:layout_height="wrap_content"
+				android:imeOptions="actionDone"
+				android:inputType="number"
+				android:singleLine="true" 	 
+				android:layout_width="match_parent">
+			</EditText>
+			
+			<TextView  
+			    android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content" 
+			    android:text="@string/housing_interest"
+			    />
+			<EditText android:text="" 
+				android:hint="@string/zero" 
+				android:id="@+id/housingInterest" 
+				android:layout_height="wrap_content"
+				android:imeOptions="actionDone"
+				android:inputType="number"
+				android:singleLine="true"  
+				android:layout_width="match_parent">
+			</EditText>
+			
+			
+			<TextView  
+			    android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content" 
+			    android:text="@string/medical_premium"
+			    />
+			<EditText android:text="" 
+				android:hint="@string/zero" 
+				android:id="@+id/medicalPremium" 
+				android:layout_height="wrap_content"
+				android:imeOptions="actionDone"
+				android:inputType="number"
+				android:singleLine="true"  
+				android:layout_width="match_parent">
+			</EditText>
+			
+			
+			<TextView  
+			    android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content"
+			    android:id="@+id/taxBot" 
+			    android:text="Tax not calculated"
+			    />
+			<Button android:onClick="onClick" android:text="@string/calculate_tax" android:layout_height="wrap_content" android:id="@+id/button1" android:layout_width="wrap_content"></Button>
+			
+		</LinearLayout>
+	</ScrollView>
+	
+	<com.google.ads.AdView android:id="@+id/adView"
+	      		android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="bottom"
+	            ads:adUnitId="a1504f267eb56c4"
+	            ads:adSize="BANNER"
+	            ads:testDevices="TEST_EMULATOR, TEST_DEVICE_ID"
+	            ads:loadAdOnCreate="true"/>
 
-
+</LinearLayout>

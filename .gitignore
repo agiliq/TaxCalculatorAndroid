@@ -8,5 +8,6 @@
 # Java class files
 *.class
 
-# generated GUI files
-gen/*
+# generated files
+bin/
+gen/
