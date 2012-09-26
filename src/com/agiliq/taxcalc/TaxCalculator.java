@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import java.lang.Math;
 
+import com.agiliq.taxcalcpro.R;
 import com.flurry.android.FlurryAgent;
 
 public class TaxCalculator extends Activity 
